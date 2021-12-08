@@ -9,12 +9,38 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Настройки"
-        view.backgroundColor = .white
+        
+        setupHierarchy()
+        setupLayout()
+        setupView()
     }
 
+    private func setupHierarchy() {
+        view.addSubview(tableView)
+    }
+    
+    private func setupLayout() {
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    private func setupView() {
+        view.backgroundColor = .white
+        title = "Настройки"
+    }
 
 }
 
