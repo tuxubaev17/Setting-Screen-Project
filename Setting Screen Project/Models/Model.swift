@@ -17,7 +17,6 @@ struct SettingsOption {
     let title: String
     let icon: UIImage?
     let iconBackgroundColor: UIColor
-    let arrow: UIImage?
     let mode: String
 }
 
@@ -32,7 +31,6 @@ struct NotificationSettingsOption {
     let title: String
     let icon: UIImage?
     let iconBackgroundColor: UIColor
-    let arrow: UIImage?
     let notificationBackgroundColor: UIColor
     let notificationNum: String
 }

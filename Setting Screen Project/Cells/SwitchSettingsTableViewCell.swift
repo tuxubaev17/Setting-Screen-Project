@@ -88,7 +88,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
             iconImageView.heightAnchor.constraint(equalToConstant: 20),
             
             switching.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
-            switching.trailingAnchor.constraint(equalTo: self.leadingAnchor, constant: 360),
+            switching.trailingAnchor.constraint(equalTo: self.leadingAnchor, constant: 390),
             switching.widthAnchor.constraint(equalToConstant: 50),
             switching.heightAnchor.constraint(equalToConstant: 50),
             
