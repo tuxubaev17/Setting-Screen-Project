@@ -64,6 +64,7 @@
 		509CBD9227608022001317BB /* Setting Screen Project */ = {
 			isa = PBXGroup;
 			children = (
+				509CBDAA276084DD001317BB /* Cells */,
 				509CBDA7276081AA001317BB /* Models */,
 				509CBD9327608022001317BB /* AppDelegate.swift */,
 				509CBD9527608022001317BB /* SceneDelegate.swift */,
@@ -80,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				509CBDA8276081C0001317BB /* Model.swift */,
-				509CBDAA276084DD001317BB /* Cells */,
 			);
 			path = Models;
 			sourceTree = "<group>";
