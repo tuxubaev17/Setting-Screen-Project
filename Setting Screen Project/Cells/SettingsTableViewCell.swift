@@ -19,14 +19,6 @@ class SettingsTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var arrowImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.tintColor = .gray
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
     private lazy var iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -61,6 +53,7 @@ class SettingsTableViewCell: UITableViewCell {
         setupHierarchy()
         setupLayout()
         setupView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -69,7 +62,7 @@ class SettingsTableViewCell: UITableViewCell {
     
     
     private func setupHierarchy() {
-        [iconContainer, label, arrowImageView, modeLabel]
+        [iconContainer, label, modeLabel]
             .forEach {
             contentView.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -92,26 +85,20 @@ class SettingsTableViewCell: UITableViewCell {
             iconImageView.widthAnchor.constraint(equalToConstant: 20),
             iconImageView.heightAnchor.constraint(equalToConstant: 20),
             
-            arrowImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            arrowImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            arrowImageView.widthAnchor.constraint(equalToConstant: 20),
-            arrowImageView.heightAnchor.constraint(equalToConstant: 20),
-            
             modeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            modeLabel.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: -10),
+            modeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -43),
         ])
     }
     
     private func setupView() {
         contentView.clipsToBounds = true
-        accessoryType = .none
+        accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
     }
     
     public func configure(model: SettingsOption) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
-        arrowImageView.image = model.arrow
         modeLabel.text = model.mode
     }
 
