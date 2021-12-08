@@ -11,7 +11,6 @@ class ViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
