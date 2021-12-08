@@ -19,14 +19,6 @@ class NotificationTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var arrowImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.tintColor = .gray
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
     private lazy var iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -79,7 +71,7 @@ class NotificationTableViewCell: UITableViewCell {
     
     
     private func setupHierarchy() {
-        [iconContainer, label, arrowImageView, notificationContainer].forEach {
+        [iconContainer, label, notificationContainer].forEach {
             contentView.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -101,13 +93,9 @@ class NotificationTableViewCell: UITableViewCell {
             iconImageView.widthAnchor.constraint(equalToConstant: 20),
             iconImageView.heightAnchor.constraint(equalToConstant: 20),
             
-            arrowImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            arrowImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            arrowImageView.widthAnchor.constraint(equalToConstant: 20),
-            arrowImageView.heightAnchor.constraint(equalToConstant: 20),
             
             notificationContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            notificationContainer.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: -10),
+            notificationContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -42),
             notificationContainer.widthAnchor.constraint(equalToConstant: 30),
             notificationContainer.heightAnchor.constraint(equalToConstant: 30),
             
@@ -120,14 +108,13 @@ class NotificationTableViewCell: UITableViewCell {
     
     private func setupView() {
         contentView.clipsToBounds = true
-        accessoryType = .none
+        accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
     }
     
     public func configure(model: NotificationSettingsOption) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
-        arrowImageView.image = model.arrow
         notificationContainer.backgroundColor = model.notificationBackgroundColor
         notificationLabel.text = model.notificationNum
     }
