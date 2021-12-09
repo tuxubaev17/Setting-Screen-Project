@@ -52,42 +52,117 @@ class ViewController: UIViewController {
     }
     
     private func configure() {
-        models.append(Section( options: [
-            .switchCell(model: SwitchSettingsOption(title: "АвиаРежим", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemOrange, isOn: false)),
+        models.append(
+            Section( options: [
+            .switchCell(model:
+                            SwitchSettingsOption(
+                                title: "АвиаРежим",
+                                icon: UIImage(systemName: "airplane"),
+                                iconBackgroundColor: .systemOrange,
+                                isOn: false)),
             
-            .staticCell(model: SettingsOption(title: "Wi-Fi", icon: UIImage(systemName: "wifi"), iconBackgroundColor: .link, mode: "Не подключен")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Wi-Fi",
+                                icon: UIImage(systemName: "wifi"),
+                                iconBackgroundColor: .link,
+                                mode: "Не подключен")),
             
-            .staticCell(model: SettingsOption(title: "Bluetooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .link, mode: "выкл")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Bluetooth",
+                                icon: UIImage(systemName: "bluetooth"),
+                                iconBackgroundColor: .link,
+                                mode: "выкл")),
             
-            .staticCell(model: SettingsOption(title: "Сотовая связь", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconBackgroundColor: .systemGreen, mode: " ")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Сотовая связь",
+                                icon: UIImage(systemName: "antenna.radiowaves.left.and.right"),
+                                iconBackgroundColor: .systemGreen,
+                                mode: " ")),
             
-            .staticCell(model: SettingsOption(title: "Режим мода", icon: UIImage(systemName: "personalhotspot"), iconBackgroundColor: .systemGreen, mode: " ")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Режим мода",
+                                icon: UIImage(systemName: "personalhotspot"),
+                                iconBackgroundColor: .systemGreen,
+                                mode: " ")),
             
-            .switchCell(model: SwitchSettingsOption(title: "VPN", icon: UIImage(systemName: "vpn"), iconBackgroundColor: .link, isOn: false)),
+            .switchCell(model:
+                            SwitchSettingsOption(
+                                title: "VPN",
+                                icon: UIImage(systemName: "vpn"),
+                                iconBackgroundColor: .link,
+                                isOn: false)),
         ]))
         
         models.append(Section( options: [
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Уведомление",
+                                icon: UIImage(systemName: "bell.badge"),
+                                iconBackgroundColor: .systemRed,
+                                mode: " ")),
             
-            .staticCell(model: SettingsOption(title: "Уведомление", icon: UIImage(systemName: "bell.badge"), iconBackgroundColor: .systemRed, mode: " ")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Звуки, тактильные сигналы",
+                                icon: UIImage(systemName: "speaker.wave.3"),
+                                iconBackgroundColor: .systemPink,
+                                mode: " ")),
             
-            .staticCell(model: SettingsOption(title: "Звуки, тактильные сигналы", icon: UIImage(systemName: "speaker.wave.3"), iconBackgroundColor: .systemPink, mode: " ")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Фокусирование",
+                                icon: UIImage(systemName: "moon.fill"),
+                                iconBackgroundColor: .systemIndigo,
+                                mode: " ")),
             
-            .staticCell(model: SettingsOption(title: "Фокусирование", icon: UIImage(systemName: "moon.fill"), iconBackgroundColor: .systemIndigo, mode: " ")),
-            
-            .staticCell(model: SettingsOption(title: "Экранное время", icon: UIImage(systemName: "hourglass"), iconBackgroundColor: .systemIndigo, mode: " ")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Экранное время",
+                                icon: UIImage(systemName: "hourglass"),
+                                iconBackgroundColor: .systemIndigo,
+                                mode: " ")),
         ]))
         
         models.append(Section( options: [
+            .notificationCell(model:
+                                NotificationSettingsOption(
+                                    title: "Основные",
+                                    icon: UIImage(systemName: "gear"),
+                                    iconBackgroundColor: .systemGray,
+                                    notificationBackgroundColor: .systemRed,
+                                    notificationNum: "1")),
             
-            .notificationCell(model: NotificationSettingsOption(title: "Основные", icon: UIImage(systemName: "gear"), iconBackgroundColor: .systemGray, notificationBackgroundColor: .systemRed, notificationNum: "1")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Пункт управления",
+                                icon: UIImage(systemName: "switch.2"),
+                                iconBackgroundColor: .systemGray,
+                                mode: " ")),
             
-            .staticCell(model: SettingsOption(title: "Пункт управления", icon: UIImage(systemName: "switch.2"), iconBackgroundColor: .systemGray, mode: " ")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Экран и яркость",
+                                icon: UIImage(systemName: "textformat.size"),
+                                iconBackgroundColor: .systemBlue,
+                                mode: " ")),
             
-            .staticCell(model: SettingsOption(title: "Экран и яркость", icon: UIImage(systemName: "textformat.size"), iconBackgroundColor: .systemBlue, mode: " ")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Экран Домой",
+                                icon: UIImage(systemName: "checkerboard.rectangle"),
+                                iconBackgroundColor: .systemBlue,
+                                mode: " ")),
             
-            .staticCell(model: SettingsOption(title: "Экран Домой", icon: UIImage(systemName: "checkerboard.rectangle"), iconBackgroundColor: .systemBlue, mode: " ")),
-            
-            .staticCell(model: SettingsOption(title: "Универсальный доступ", icon: UIImage(systemName: "figure.wave.circle.fill"), iconBackgroundColor: .systemBlue, mode: " ")),
+            .staticCell(model:
+                            SettingsOption(
+                                title: "Универсальный доступ",
+                                icon: UIImage(systemName: "figure.wave.circle.fill"),
+                                iconBackgroundColor: .systemBlue,
+                                mode: " ")),
         ]))
     }
 
