@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 55
         return tableView
     }()
     
@@ -98,10 +99,6 @@ extension ViewController: UITableViewDelegate {
         case .notificationCell(let model):
             print(model.title)
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
     }
 }
 
