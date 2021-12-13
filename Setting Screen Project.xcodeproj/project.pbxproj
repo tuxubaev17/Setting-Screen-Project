@@ -51,6 +51,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50574B5327672CED00DB5923 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				509CBD9C27608024001317BB /* Assets.xcassets */,
+				50574B5427672D0000DB5923 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		50574B5427672D0000DB5923 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				509CBD9E27608024001317BB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		50574B5527672D1C00DB5923 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				50574B5727672D3300DB5923 /* Scenes */,
+				50574B5627672D2700DB5923 /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		50574B5627672D2700DB5923 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				509CBD9527608022001317BB /* SceneDelegate.swift */,
+				509CBD9327608022001317BB /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		50574B5727672D3300DB5923 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				509CBDAA276084DD001317BB /* Cells */,
+				509CBDA7276081AA001317BB /* Models */,
+				509CBD9727608022001317BB /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		509CBD8727608022001317BB = {
 			isa = PBXGroup;
 			children = (
@@ -70,13 +115,8 @@
 		509CBD9227608022001317BB /* Setting Screen Project */ = {
 			isa = PBXGroup;
 			children = (
-				509CBDAA276084DD001317BB /* Cells */,
-				509CBDA7276081AA001317BB /* Models */,
-				509CBD9327608022001317BB /* AppDelegate.swift */,
-				509CBD9527608022001317BB /* SceneDelegate.swift */,
-				509CBD9727608022001317BB /* ViewController.swift */,
-				509CBD9C27608024001317BB /* Assets.xcassets */,
-				509CBD9E27608024001317BB /* LaunchScreen.storyboard */,
+				50574B5327672CED00DB5923 /* Resources */,
+				50574B5527672D1C00DB5923 /* Sources */,
 				509CBDA127608024001317BB /* Info.plist */,
 			);
 			path = "Setting Screen Project";

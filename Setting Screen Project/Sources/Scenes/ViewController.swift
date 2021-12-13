@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         tableView.register(SwitchSettingsTableViewCell.self, forCellReuseIdentifier: SwitchSettingsTableViewCell.identifier)
         tableView.register(NotificationTableViewCell.self, forCellReuseIdentifier: NotificationTableViewCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
     
@@ -29,8 +31,7 @@ class ViewController: UIViewController {
         setupLayout()
         setupView()
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        
     }
 
     private func setupHierarchy() {
