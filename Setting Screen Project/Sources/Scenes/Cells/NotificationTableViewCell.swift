@@ -71,7 +71,7 @@ class NotificationTableViewCell: SettingsTableViewCell {
         accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
     }
     
-    public func configure(model: NotificationSettingsOption) {
+    public override func configure(model: SettingsOption) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor

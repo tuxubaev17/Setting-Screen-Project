@@ -29,8 +29,6 @@ class ViewController: UIViewController {
         setupHierarchy()
         setupLayout()
         setupView()
-        
-        
     }
 
     private func setupHierarchy() {
@@ -66,18 +64,18 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.section].options[indexPath.row]
         
-        switch model.self {
-        case .staticCell(let model):
+        switch model.typeCell.self {
+        case .staticCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath) as? SettingsTableViewCell else { return UITableViewCell() }
             cell.configure(model: model)
             return cell
             
-        case .switchCell(let model):
+        case .switchCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchSettingsTableViewCell.identifierSwitchSettings, for: indexPath) as? SwitchSettingsTableViewCell else { return UITableViewCell() }
             cell.configure(model: model)
             return cell
             
-        case .notificationCell(let model):
+        case .notificationCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifierNotification, for: indexPath) as? NotificationTableViewCell else { return UITableViewCell() }
             cell.configure(model: model)
             return cell
@@ -89,14 +87,14 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let type = models[indexPath.section].options[indexPath.row]
+        let model = models[indexPath.section].options[indexPath.row]
        
-        switch type.self {
-        case .staticCell(let model):
+        switch model.typeCell {
+        case .staticCell:
             print(model.title)
-        case .switchCell(let model):
+        case .switchCell:
             print(model.title)
-        case .notificationCell(let model):
+        case .notificationCell:
             print(model.title)
         }
     }
