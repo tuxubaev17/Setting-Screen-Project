@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
-        tableView.register(SwitchSettingsTableViewCell.self, forCellReuseIdentifier: SwitchSettingsTableViewCell.identifier)
-        tableView.register(NotificationTableViewCell.self, forCellReuseIdentifier: NotificationTableViewCell.identifier)
+        tableView.register(SwitchSettingsTableViewCell.self, forCellReuseIdentifier: SwitchSettingsTableViewCell.identifierSwitchSettings)
+        tableView.register(NotificationTableViewCell.self, forCellReuseIdentifier: NotificationTableViewCell.identifierNotification)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
@@ -73,12 +73,12 @@ extension ViewController: UITableViewDataSource {
             return cell
             
         case .switchCell(let model):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchSettingsTableViewCell.identifier, for: indexPath) as? SwitchSettingsTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchSettingsTableViewCell.identifierSwitchSettings, for: indexPath) as? SwitchSettingsTableViewCell else { return UITableViewCell() }
             cell.configure(model: model)
             return cell
             
         case .notificationCell(let model):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifier, for: indexPath) as? NotificationTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifierNotification, for: indexPath) as? NotificationTableViewCell else { return UITableViewCell() }
             cell.configure(model: model)
             return cell
         }

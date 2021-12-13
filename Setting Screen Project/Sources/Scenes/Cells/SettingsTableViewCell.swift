@@ -11,7 +11,7 @@ class SettingsTableViewCell: UITableViewCell {
     
     static let identifier = "SettingTableViewCell"
     
-    private lazy var iconImageView: UIImageView = {
+    lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.tintColor = .white
         imageView.contentMode = .scaleAspectFit
@@ -19,7 +19,7 @@ class SettingsTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var iconContainer: UIView = {
+    lazy var iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
@@ -28,7 +28,7 @@ class SettingsTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var label: UILabel = {
+    lazy var label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         label.textAlignment = .left
