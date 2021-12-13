@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5058AADB2761D35C00D3E64D /* SettingsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5058AADA2761D35C00D3E64D /* SettingsOption.swift */; };
-		5058AADD2761D3A000D3E64D /* SwitchSettingsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5058AADC2761D3A000D3E64D /* SwitchSettingsOption.swift */; };
-		5058AADF2761D3EE00D3E64D /* NotificationSettingsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5058AADE2761D3EE00D3E64D /* NotificationSettingsOption.swift */; };
-		5058AAE12761D41C00D3E64D /* SettingsOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5058AAE02761D41C00D3E64D /* SettingsOptionType.swift */; };
 		509CBD9427608022001317BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CBD9327608022001317BB /* AppDelegate.swift */; };
 		509CBD9627608022001317BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CBD9527608022001317BB /* SceneDelegate.swift */; };
 		509CBD9827608022001317BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CBD9727608022001317BB /* ViewController.swift */; };
@@ -23,10 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5058AADA2761D35C00D3E64D /* SettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOption.swift; sourceTree = "<group>"; };
-		5058AADC2761D3A000D3E64D /* SwitchSettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSettingsOption.swift; sourceTree = "<group>"; };
-		5058AADE2761D3EE00D3E64D /* NotificationSettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsOption.swift; sourceTree = "<group>"; };
-		5058AAE02761D41C00D3E64D /* SettingsOptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionType.swift; sourceTree = "<group>"; };
 		509CBD9027608022001317BB /* Setting Screen Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Setting Screen Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CBD9327608022001317BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509CBD9527608022001317BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,10 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				509CBDA8276081C0001317BB /* SectionModel.swift */,
-				5058AADA2761D35C00D3E64D /* SettingsOption.swift */,
-				5058AADC2761D3A000D3E64D /* SwitchSettingsOption.swift */,
-				5058AADE2761D3EE00D3E64D /* NotificationSettingsOption.swift */,
-				5058AAE02761D41C00D3E64D /* SettingsOptionType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,15 +204,11 @@
 			files = (
 				509CBDB027608523001317BB /* NotificationTableViewCell.swift in Sources */,
 				509CBD9827608022001317BB /* ViewController.swift in Sources */,
-				5058AAE12761D41C00D3E64D /* SettingsOptionType.swift in Sources */,
 				509CBD9427608022001317BB /* AppDelegate.swift in Sources */,
 				509CBD9627608022001317BB /* SceneDelegate.swift in Sources */,
 				509CBDAC276084F5001317BB /* SettingsTableViewCell.swift in Sources */,
 				509CBDAE27608511001317BB /* SwitchSettingsTableViewCell.swift in Sources */,
 				509CBDA9276081C0001317BB /* SectionModel.swift in Sources */,
-				5058AADB2761D35C00D3E64D /* SettingsOption.swift in Sources */,
-				5058AADF2761D3EE00D3E64D /* NotificationSettingsOption.swift in Sources */,
-				5058AADD2761D3A000D3E64D /* SwitchSettingsOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
