@@ -61,11 +61,11 @@ class SwitchSettingsTableViewCell: SettingsTableViewCell {
         accessoryType = .none
     }
     
-    public func configure(model: SwitchSettingsOption) {
+    public override func configure(model: SettingsOption) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
-        switching.isOn = model.isOn
+        switching.isOn = model.isOn ?? false
     }
 
 }
