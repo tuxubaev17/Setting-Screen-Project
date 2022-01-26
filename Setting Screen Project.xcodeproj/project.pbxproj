@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		502C369927A13933004E7A3A /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502C369827A13933004E7A3A /* Setting.swift */; };
+		502C369B27A13B2B004E7A3A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502C369A27A13B2B004E7A3A /* SettingView.swift */; };
 		509CBD9427608022001317BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CBD9327608022001317BB /* AppDelegate.swift */; };
 		509CBD9627608022001317BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CBD9527608022001317BB /* SceneDelegate.swift */; };
-		509CBD9827608022001317BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CBD9727608022001317BB /* ViewController.swift */; };
+		509CBD9827608022001317BB /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CBD9727608022001317BB /* SettingController.swift */; };
 		509CBD9D27608024001317BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509CBD9C27608024001317BB /* Assets.xcassets */; };
 		509CBDA027608024001317BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CBD9E27608024001317BB /* LaunchScreen.storyboard */; };
 		509CBDA9276081C0001317BB /* SettingSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CBDA8276081C0001317BB /* SettingSectionModel.swift */; };
@@ -21,10 +22,11 @@
 
 /* Begin PBXFileReference section */
 		502C369827A13933004E7A3A /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		502C369A27A13B2B004E7A3A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		509CBD9027608022001317BB /* Setting Screen Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Setting Screen Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CBD9327608022001317BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509CBD9527608022001317BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		509CBD9727608022001317BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		509CBD9727608022001317BB /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		509CBD9C27608024001317BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		509CBD9F27608024001317BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		509CBDA127608024001317BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		502C369627A138F1004E7A3A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				509CBD9727608022001317BB /* ViewController.swift */,
+				509CBD9727608022001317BB /* SettingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				509CBDAA276084DD001317BB /* Cells */,
+				502C369A27A13B2B004E7A3A /* SettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,8 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				509CBDB027608523001317BB /* NotificationTableViewCell.swift in Sources */,
-				509CBD9827608022001317BB /* ViewController.swift in Sources */,
+				509CBD9827608022001317BB /* SettingController.swift in Sources */,
 				509CBD9427608022001317BB /* AppDelegate.swift in Sources */,
+				502C369B27A13B2B004E7A3A /* SettingView.swift in Sources */,
 				509CBD9627608022001317BB /* SceneDelegate.swift in Sources */,
 				509CBDAC276084F5001317BB /* SettingsTableViewCell.swift in Sources */,
 				509CBDAE27608511001317BB /* SwitchSettingsTableViewCell.swift in Sources */,

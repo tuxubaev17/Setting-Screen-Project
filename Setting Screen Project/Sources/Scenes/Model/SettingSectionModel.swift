@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension Section {
-    static func getSettingCell() -> [Section] {
+final class SettingModel {
+    func getSettingCell() -> [Section] {
         return [
             Section(options: [ SettingsOption(
                                 title: "АвиаРежим",
