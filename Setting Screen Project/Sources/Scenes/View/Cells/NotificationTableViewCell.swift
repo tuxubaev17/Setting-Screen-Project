@@ -7,35 +7,9 @@
 
 import UIKit
 
-class NotificationTableViewCell: UITableViewCell {
+class NotificationTableViewCell: SettingsTableViewCell {
     
-    static let identifier = "NotificationTableViewCell"
-    
-    private lazy var iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.tintColor = .white
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    private lazy var iconContainer: UIView = {
-        let view = UIView()
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 8
-        view.layer.masksToBounds = true
-        view.addSubview(iconImageView)
-        return view
-    }()
-    
-    private lazy var label: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.textAlignment = .left
-        label.lineBreakMode = .byClipping
-        
-        return label
-    }()
+    static let identifierNotification = "NotificationTableViewCell"
     
     private lazy var notificationContainer: UIView = {
         let view = UIView()
@@ -80,20 +54,6 @@ class NotificationTableViewCell: UITableViewCell {
     private func setupLayout() {
         NSLayoutConstraint.activate([
             
-            iconContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            iconContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            iconContainer.widthAnchor.constraint(equalToConstant: 40),
-            iconContainer.heightAnchor.constraint(equalToConstant: 40),
-            
-            label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            label.leadingAnchor.constraint(equalTo: iconContainer.trailingAnchor, constant: 20),
-            
-            iconImageView.centerYAnchor.constraint(equalTo: iconContainer.centerYAnchor),
-            iconImageView.centerXAnchor.constraint(equalTo: iconContainer.centerXAnchor),
-            iconImageView.widthAnchor.constraint(equalToConstant: 20),
-            iconImageView.heightAnchor.constraint(equalToConstant: 20),
-            
-            
             notificationContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             notificationContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -42),
             notificationContainer.widthAnchor.constraint(equalToConstant: 30),
@@ -111,7 +71,7 @@ class NotificationTableViewCell: UITableViewCell {
         accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
     }
     
-    public func configure(model: NotificationSettingsOption) {
+    public override func configure(model: SettingsOption) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor

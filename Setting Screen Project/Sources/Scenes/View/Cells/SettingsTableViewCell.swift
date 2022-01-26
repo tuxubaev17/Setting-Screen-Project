@@ -1,5 +1,5 @@
 //
-//  SwitchSettingsTableViewCell.swift
+//  SettingsTableViewCell.swift
 //  Setting Screen Project
 //
 //  Created by Alikhan Tuxubayev on 08.12.2021.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class SwitchSettingsTableViewCell: UITableViewCell {
+class SettingsTableViewCell: UITableViewCell {
     
-    static let identifier = "SwitchSettingsTableViewCell"
+    static let identifier = "SettingTableViewCell"
     
-    private lazy var iconImageView: UIImageView = {
+    lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.tintColor = .white
         imageView.contentMode = .scaleAspectFit
@@ -19,7 +19,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var iconContainer: UIView = {
+    lazy var iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
@@ -28,7 +28,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var label: UILabel = {
+    lazy var label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         label.textAlignment = .left
@@ -37,11 +37,14 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var switching: UISwitch = {
-        let mySwitch = UISwitch()
-        mySwitch.onTintColor = .systemOrange
+    private lazy var modeLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray
+        label.numberOfLines = 1
+        label.textAlignment = .left
+        label.lineBreakMode = .byClipping
         
-        return mySwitch
+        return label
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -50,22 +53,17 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         setupHierarchy()
         setupLayout()
         setupView()
+        
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        iconImageView.image = nil
-        label.text = nil
-        iconContainer.backgroundColor = nil
-        switching.isOn = false
-    }
     
     private func setupHierarchy() {
-        [iconContainer, label, switching].forEach {
+        [iconContainer, label, modeLabel]
+            .forEach {
             contentView.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -87,24 +85,22 @@ class SwitchSettingsTableViewCell: UITableViewCell {
             iconImageView.widthAnchor.constraint(equalToConstant: 20),
             iconImageView.heightAnchor.constraint(equalToConstant: 20),
             
-            switching.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
-            switching.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            switching.widthAnchor.constraint(equalToConstant: 50),
-            switching.heightAnchor.constraint(equalToConstant: 50),
-            
+            modeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            modeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -43),
         ])
     }
     
     private func setupView() {
         contentView.clipsToBounds = true
-        accessoryType = .none
+        accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
     }
     
-    public func configure(model: SwitchSettingsOption) {
+    public func configure(model: SettingsOption) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
-        switching.isOn = model.isOn
+        modeLabel.text = model.mode
     }
 
 }
+
