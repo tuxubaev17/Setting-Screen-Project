@@ -1,16 +1,21 @@
 //
-//  ViewController.swift
+//  SettingView.swift
 //  Setting Screen Project
 //
-//  Created by Alikhan Tuxubayev on 08.12.2021.
+//  Created by Alikhan Tuxubayev on 26.01.2022.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    var models = Section.getSettingCell()
+class SettingView: UIView {
     
+    func configureView(with models: [Section]) {
+       self.models = models
+       tableView.reloadData()
+       }
+    
+    var models = [Section]() 
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
@@ -23,35 +28,41 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-                
+    init() {
+        super.init(frame: .zero)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
         setupHierarchy()
         setupLayout()
         setupView()
     }
-
+    
     private func setupHierarchy() {
-        view.addSubview(tableView)
+        addSubview(tableView)
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
     private func setupView() {
-        view.backgroundColor = .white
-        title = "Настройки"
+        backgroundColor = .white
     }
-    
 }
 
-extension ViewController: UITableViewDataSource {
+extension SettingView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return models.count
@@ -83,7 +94,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension SettingView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -99,4 +110,3 @@ extension ViewController: UITableViewDelegate {
         }
     }
 }
-
